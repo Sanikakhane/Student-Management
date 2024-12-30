@@ -10,17 +10,17 @@ namespace StudentManagementSystem
 
         public StudentFilter(List<Student> students)
         {
-            students = students;
+           this.students = students;
         }
 
-        public IEnumerable<Student> GetStudentsByGrade(string grade)
+        public List<Student> GetStudentsByGrade(string grade)
         {
-            return  students.Where(st => st.Grade==grade);
+            return  students.Where(st => st.Grade==grade).ToList();
         }
 
-        public IEnumerable<Student> GetToppers(int count)
+        public List<Student> GetToppers(int count)
         {
-            return students.OrderByDescending(st => st.Marks).Take(count); 
+            return students.OrderByDescending(st => st.Marks).Take(count).ToList(); 
         }
     }
     public class StudentSorter : ISortable

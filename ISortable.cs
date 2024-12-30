@@ -7,8 +7,8 @@ namespace StudentManagementSystem
     }
     public interface IFilterable
     {
-        IEnumerable<Student> GetStudentsByGrade(string grade);
-        IEnumerable<Student> GetToppers(int count);
+        List<Student> GetStudentsByGrade(string grade);
+        List<Student> GetToppers(int count);
         
     }
 
