@@ -33,5 +33,21 @@
     "Age": 21,
     "Marks": 80,
     "Grade": "C"
+  },
+  {
+    "Id": 6,
+    "Name": "John",
+    "Age": 21,
+    "Marks": 90,
+    "Grade": "A"
+  },
+  {
+    "Id": 7,
+    "Name": "Max",
+    "Age": 21,
+    "Marks": 87,
+    "Grade": "B"
   }
+
+
 ]

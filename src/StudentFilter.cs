@@ -22,25 +22,39 @@ namespace StudentManagementSystem
         {
             return students.OrderByDescending(st => st.Marks).Take(count).ToList(); 
         }
-    }
-    public class StudentSorter : ISortable
-    {
-        private readonly List<Student> students;
-
-        public StudentSorter(List<Student> students)
+        public List<Student> GetStudentsByCourse(string? courseName, List<Enrollment> enrollments, List<Course> courses)
         {
-            this.students = students;
+           var courseId = courses.FirstOrDefault(c => c.CourseName == courseName).CourseId;
+            if (courseId != null) 
+            {
+                return new List<Student>();
+            }
+            return students.Where(st => enrollments.Any(e => e.StudentId ==st.Id && e.CourseId ==courseId)).ToList();
+        }
+        public Dictionary<string, List<Student>> GroupStudentsByCourses(List<Enrollment> enrollments, List<Course> courses)
+        {
+            return courses.ToDictionary(
+                course => course.CourseName,
+                course => students.Where(st => enrollments.Any(e => e.StudentId == st.Id && e.CourseId == course.CourseId)).ToList()
+            );
+        }
+        public List<Student> GetTopScorersByCourse(string courseName, int topCount, List<Enrollment> enrollments, List<Course> courses)
+        {
+            var courseId = courses.FirstOrDefault(c => c.CourseName == courseName)?.CourseId;
+
+            if (courseId == null)
+                return new List<Student>();
+
+            return students
+                .Where(st => enrollments.Any(e => e.StudentId == st.Id && e.CourseId == courseId))
+                .OrderByDescending(st => st.Marks)
+                .Take(topCount)
+                .ToList();
         }
 
-        public List<Student> SortByMarks()
-        {
-           return students.OrderByDescending(st => st.Marks).ToList();
-        }
 
-        public List<Student> SortByName()
-        {
-            return students.OrderBy(st => st.Name).ToList();
-        }
     }
 }
+
+
 
