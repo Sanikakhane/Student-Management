@@ -1,0 +1,17 @@
+[
+  {
+    "CourseId": 101,
+    "CourseName": "Mathematics",
+    "Instructor": "Mr. A"
+  },
+  {
+    "CourseId": 102,
+    "CourseName": "Science",
+    "Instructor": "Ms. B"
+  },
+  {
+    "CourseId": 103,
+    "CourseName": "History",
+    "Instructor": "Mr. C"
+  }
+]

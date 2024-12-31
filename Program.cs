@@ -8,35 +8,20 @@ namespace StudentManagementSystem
         static void Main(string[] args)
         {
             
-
-            var students = new List<Student>
+            var students = JsonHelper.LoadJsonData<Student>("C:\\Users\\Khan_San\\source\\repos\\Student-Management\\data\\students.json");
+            var courses = JsonHelper.LoadJsonData<Course>("C:\\Users\\Khan_San\\source\\repos\\Student-Management\\data\\courses.json");
+            var enrollments = new List<Enrollment>
             {
-                new Student(1, "Sanika",20,85,"A"),
-                new Student(2, "Alice",20,75,"C"),
-                new Student(3, "Xyz",21,96,"B"),
-                new Student(4, "Bob",20,97,"A"),
-                new Student(5, "abcd",21,80,"C")
-
+                new Enrollment(1, 101),
+                new Enrollment(2, 102),
+                new Enrollment(3, 103),
+                new Enrollment(4, 101),
+                new Enrollment(5, 102)
             };
 
-
-            StudentSorter ss = new StudentSorter(students);
-            var result = new List<Student>();
-            result = ss.SortByMarks();
-
-            var studentsSortedByName = new List<Student>();
-            studentsSortedByName = ss.SortByName();
-
-            StudentFilter sf = new StudentFilter(students);
-            result = sf.GetStudentsByGrade("A");
-
-            result=sf.GetToppers(3);
-
-
-
-            foreach (var item in result)
+            foreach(var student in students)
             {
-                Console.WriteLine(item.Name+ " "+item.Marks+" "+item.Grade);
+                Console.WriteLine($"{student.Id}  {student.Name}  {student.Age}  {student.Marks} {student.Grade}");
             }
 
 

@@ -25,6 +25,26 @@ namespace StudentManagementSystem
             }
 
 
+            var studentCourseDetails = students.Join(enrollments,
+                                       student => student.Id,
+                                       enrollment => enrollment.StudentId,
+                                       (student, enrollment) => new { student.Name, enrollment.CourseId }).Join(courses,
+                                                      result => result.CourseId,
+                                                      course => course.CourseId,
+                                                      (result, course) => new
+                                                      {
+                                                        result.Name,
+                                                        course.CourseName,
+                                                        course.Instructor
+                                                      });
+
+            Console.WriteLine("Student-Course Details:");
+            foreach (var detail in studentCourseDetails)
+            {
+                Console.WriteLine($"{detail.Name} is enrolled in {detail.CourseName} (Instructor: {detail.Instructor})");
+            }
+
+
         }
     }
 }

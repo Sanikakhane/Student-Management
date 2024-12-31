@@ -1,0 +1,37 @@
+[
+  {
+    "Id": 1,
+    "Name": "Sanika",
+    "Age": 20,
+    "Marks": 85,
+    "Grade": "A"
+  },
+  {
+    "Id": 2,
+    "Name": "Alice",
+    "Age": 20,
+    "Marks": 75,
+    "Grade": "C"
+  },
+  {
+    "Id": 3,
+    "Name": "Xyz",
+    "Age": 21,
+    "Marks": 96,
+    "Grade": "B"
+  },
+  {
+    "Id": 4,
+    "Name": "Bob",
+    "Age": 20,
+    "Marks": 97,
+    "Grade": "A"
+  },
+  {
+    "Id": 5,
+    "Name": "Abcd",
+    "Age": 21,
+    "Marks": 80,
+    "Grade": "C"
+  }
+]
