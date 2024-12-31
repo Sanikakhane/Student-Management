@@ -7,14 +7,7 @@ namespace StudentManagementSystem
     {
         static void Main(string[] args)
         {
-            //var students = new List<Student>();
-            //Student st = new Student(1, "Sanika", 20, 85, "A");
-            //Student s1 = new Student(2, "Alice", 20, 75, "C");
-            //Student s2 = new Student(3, "Xyz", 21, 96, "B")
-
-            //students.Add(st);
-            //students.Add(s1);
-            //students.Add(s2);
+            
 
             var students = new List<Student>
             {
@@ -29,12 +22,13 @@ namespace StudentManagementSystem
 
             StudentSorter ss = new StudentSorter(students);
             var result = new List<Student>();
-            //result = ss.SortByMarks();
+            result = ss.SortByMarks();
 
-            //result = ss.SortByName();
+            var studentsSortedByName = new List<Student>();
+            studentsSortedByName = ss.SortByName();
 
             StudentFilter sf = new StudentFilter(students);
-            //result = sf.GetStudentsByGrade("A");
+            result = sf.GetStudentsByGrade("A");
 
             result=sf.GetToppers(3);
 
