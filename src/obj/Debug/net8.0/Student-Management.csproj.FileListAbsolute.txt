@@ -1,0 +1,15 @@
+C:\Users\Khan_San\source\repos\Student-Management\src\bin\Debug\net8.0\Student-Management.exe
+C:\Users\Khan_San\source\repos\Student-Management\src\bin\Debug\net8.0\Student-Management.deps.json
+C:\Users\Khan_San\source\repos\Student-Management\src\bin\Debug\net8.0\Student-Management.runtimeconfig.json
+C:\Users\Khan_San\source\repos\Student-Management\src\bin\Debug\net8.0\Student-Management.dll
+C:\Users\Khan_San\source\repos\Student-Management\src\bin\Debug\net8.0\Student-Management.pdb
+C:\Users\Khan_San\source\repos\Student-Management\src\obj\Debug\net8.0\Student-Management.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Khan_San\source\repos\Student-Management\src\obj\Debug\net8.0\Student-Management.AssemblyInfoInputs.cache
+C:\Users\Khan_San\source\repos\Student-Management\src\obj\Debug\net8.0\Student-Management.AssemblyInfo.cs
+C:\Users\Khan_San\source\repos\Student-Management\src\obj\Debug\net8.0\Student-Management.csproj.CoreCompileInputs.cache
+C:\Users\Khan_San\source\repos\Student-Management\src\obj\Debug\net8.0\Student-Management.sourcelink.json
+C:\Users\Khan_San\source\repos\Student-Management\src\obj\Debug\net8.0\Student-Management.dll
+C:\Users\Khan_San\source\repos\Student-Management\src\obj\Debug\net8.0\refint\Student-Management.dll
+C:\Users\Khan_San\source\repos\Student-Management\src\obj\Debug\net8.0\Student-Management.pdb
+C:\Users\Khan_San\source\repos\Student-Management\src\obj\Debug\net8.0\Student-Management.genruntimeconfig.cache
+C:\Users\Khan_San\source\repos\Student-Management\src\obj\Debug\net8.0\ref\Student-Management.dll
