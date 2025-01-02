@@ -7,13 +7,6 @@
     "Grade": "A"
   },
   {
-    "Id": 2,
-    "Name": "Alice",
-    "Age": 20,
-    "Marks": 75,
-    "Grade": "C"
-  },
-  {
     "Id": 3,
     "Name": "Xyz",
     "Age": 21,
@@ -47,7 +40,19 @@
     "Age": 21,
     "Marks": 87,
     "Grade": "B"
+  },
+  {
+    "Id": 8,
+    "Name": "Sanika",
+    "Age": 21,
+    "Marks": 96,
+    "Grade": "A"
+  },
+  {
+    "Id": 9,
+    "Name": "Alice",
+    "Age": 25,
+    "Marks": 96,
+    "Grade": "A"
   }
-
-
 ]

@@ -1,8 +1,8 @@
 [
   {
     "CourseId": 101,
-    "CourseName": "Mathematics",
-    "Instructor": "Mr. A"
+    "CourseName": "English",
+    "Instructor": "Ms. A"
   },
   {
     "CourseId": 102,
@@ -13,5 +13,15 @@
     "CourseId": 103,
     "CourseName": "History",
     "Instructor": "Mr. C"
+  },
+  {
+    "CourseId": 104,
+    "CourseName": "Maths",
+    "Instructor": "Dr. Smith"
+  },
+  {
+    "CourseId": 105,
+    "CourseName": "History",
+    "Instructor": "Mr.G"
   }
 ]
