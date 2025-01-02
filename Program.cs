@@ -11,8 +11,8 @@ namespace StudentManagementSystem
         {
             try
             {
-                var students = JsonHelper.LoadJsonData<Student>("C:\\Users\\Khan_San\\source\\repos\\Student-Management\\Data\\students.json");
-                var courses = JsonHelper.LoadJsonData<Course>("C:\\Users\\Khan_San\\source\\repos\\Student-Management\\Data\\courses.json");
+                var students = JsonHelper.LoadJsonData<Student>(GlobalPath.studentDataPath);
+                var courses = JsonHelper.LoadJsonData<Course>(GlobalPath.courseDataPath);
 
                 var enrollments = new List<Enrollment>
                 {
@@ -74,7 +74,7 @@ namespace StudentManagementSystem
                 try
                 {
                    
-                    courseManager.AddCourse(101, "", "Dr. Smith");
+                    courseManager.AddCourse(104, "Science", "Dr. Smith");
 
                     courseManager.UpdateCourse(101, "Marathi", "Prof. Johnson");
 
@@ -90,6 +90,19 @@ namespace StudentManagementSystem
                 catch (Exception ex)
                 {
                     Console.WriteLine($"Unexpected error: {ex.Message}");
+                }
+
+                StudentManager studentManager = new StudentManager(students);
+                try
+                {
+                    studentManager.AddStudent(5, "Sanu", 21, 98, "A");
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Unexpected error : {ex.Message}");
                 }
 
             }

@@ -33,6 +33,7 @@ namespace StudentManagementSystem.Services
                     throw new InvalidOperationException($"A course with ID {courseId} already exists.");
 
                 courses.Add(new Course(courseId, courseName, instructor));
+                JsonHelper.SaveJsonData(courses, GlobalPath.courseDataPath);
                 Console.WriteLine($"Course '{courseName}' added successfully.");
             }
             catch (Exception ex)
@@ -58,7 +59,7 @@ namespace StudentManagementSystem.Services
 
                 course.CourseName = newCourseName;
                 course.Instructor = newInstructor;
-
+                JsonHelper.SaveJsonData(courses, GlobalPath.courseDataPath);
                 Console.WriteLine($"Course with ID {courseId} updated successfully.");
             }
             catch (Exception ex)
@@ -78,7 +79,7 @@ namespace StudentManagementSystem.Services
 
                 courses.RemoveAll(c => c.CourseId == courseId);
                 enrollments.RemoveAll(e => e.CourseId == courseId);
-
+                JsonHelper.SaveJsonData(courses, GlobalPath.courseDataPath);
                 Console.WriteLine($"Course with ID {courseId} deleted successfully.");
             }
             catch (Exception ex)
