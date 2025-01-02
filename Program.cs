@@ -69,6 +69,29 @@ namespace StudentManagementSystem
                 {
                     Console.WriteLine($"Error in fetching top scorer: {ex.Message}");
                 }
+
+                CourseManager courseManager = new CourseManager(courses, enrollments);
+                try
+                {
+                   
+                    courseManager.AddCourse(101, "", "Dr. Smith");
+
+                    courseManager.UpdateCourse(101, "Marathi", "Prof. Johnson");
+
+                    courseManager.DeleteCourse(101);
+                    var course = courseManager.GetCourseById(101);
+                    if (course != null)
+                    {
+                        Console.WriteLine($"Course: {course.CourseName}, Instructor: {course.Instructor}");
+                    }
+                    var allCourses = courseManager.GetAllCourses();
+                    Console.WriteLine($"Total Courses: {allCourses.Count}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Unexpected error: {ex.Message}");
+                }
+
             }
             catch (Exception ex)
             {
