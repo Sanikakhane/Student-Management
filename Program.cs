@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using StudentManagementSystem.Models;
+using StudentManagementSystem.Services;
 
 namespace StudentManagementSystem
 {
@@ -10,8 +11,8 @@ namespace StudentManagementSystem
         {
             try
             {
-                var students = JsonHelper.LoadJsonData<Student>("C:\\Users\\Khan_San\\source\\repos\\Student-Management\\data\\students.json");
-                var courses = JsonHelper.LoadJsonData<Course>("C:\\Users\\Khan_San\\source\\repos\\Student-Management\\data\\courses.json");
+                var students = JsonHelper.LoadJsonData<Student>("C:\\Users\\Khan_San\\source\\repos\\Student-Management\\Data\\students.json");
+                var courses = JsonHelper.LoadJsonData<Course>("C:\\Users\\Khan_San\\source\\repos\\Student-Management\\Data\\courses.json");
 
                 var enrollments = new List<Enrollment>
                 {
@@ -21,11 +22,12 @@ namespace StudentManagementSystem
                     new Enrollment(4, 101),
                     new Enrollment(5, 102),
                 };
-                
+                var studentFilter = new StudentFilter(students);
+
                 try
                 {
                     Console.WriteLine("Students enrolled in 'History':");
-                    var studentsByCourse = sf.GetStudentsByCourse("History", enrollments, courses);
+                    var studentsByCourse = studentFilter.GetStudentsByCourse("History", enrollments, courses);
                     foreach (var student in studentsByCourse)
                     {
                         Console.WriteLine($"{student.Name}");
@@ -39,7 +41,7 @@ namespace StudentManagementSystem
                 try
                 {
                     Console.WriteLine("\nGrouped Students by Courses:");
-                    var studentGroupByCourse = sf.GroupStudentsByCourses(enrollments, courses);
+                    var studentGroupByCourse = studentFilter.GroupStudentsByCourses(enrollments, courses);
                     foreach (var course in studentGroupByCourse)
                     {
                         Console.WriteLine($"Course: {course.Key}");
@@ -57,7 +59,7 @@ namespace StudentManagementSystem
                 try
                 {
                     Console.WriteLine("\nTop Scorer in 'History':");
-                    var topScorers = sf.GetTopScorersByCourse("History", 1, enrollments, courses);
+                    var topScorers = studentFilter.GetTopScorersByCourse("History", 1, enrollments, courses);
                     foreach (var student in topScorers)
                     {
                         Console.WriteLine($"{student.Name}");
